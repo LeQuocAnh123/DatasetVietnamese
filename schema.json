@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vietnamese Spelling Dataset Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "linguistics",
+    "pedagogy",
+    "metadata"
+  ],
+  "properties": {
+    "linguistics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "am_dau",
+        "doc_am_dau",
+        "van",
+        "am_dem",
+        "am_chinh",
+        "am_cuoi",
+        "thanh",
+        "am_tiet_khong_dau",
+        "ngoai_le"
+      ],
+      "properties": {
+        "am_dau": {
+          "type": "string"
+        },
+        "doc_am_dau": {
+          "type": "string"
+        },
+        "van": {
+          "type": "string"
+        },
+        "am_dem": {
+          "type": "string"
+        },
+        "am_chinh": {
+          "type": "string"
+        },
+        "am_cuoi": {
+          "type": "string"
+        },
+        "thanh": {
+          "type": "string",
+          "enum": [
+            "ngang",
+            "huyền",
+            "sắc",
+            "hỏi",
+            "ngã",
+            "nặng"
+          ]
+        },
+        "am_tiet_khong_dau": {
+          "type": "string"
+        },
+        "ngoai_le": {
+          "type": "boolean"
+        }
+      }
+    },
+    "pedagogy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "danh_van",
+        "do_kho",
+        "nhom_bai_hoc"
+      ],
+      "properties": {
+        "danh_van": {
+          "type": "string"
+        },
+        "do_kho": {
+          "type": "string",
+          "enum": [
+            "de",
+            "trung_binh",
+            "kho"
+          ]
+        },
+        "nhom_bai_hoc": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "khong_am_dau",
+              "am_dau_don",
+              "am_dau_ghep",
+              "dac_biet_gi_qu",
+              "van_co_am_dem",
+              "van_co_am_cuoi",
+              "van_phuc"
+            ]
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "word",
+        "version",
+        "source"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "word": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string",
+          "enum": [
+            "sgk",
+            "ngoai_le",
+            "vay_muon"
+          ]
+        }
+      }
+    }
+  }
+}
